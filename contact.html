@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+ <header>
+  <nav class="navbar">
+  <div class="nav-center">
+  
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+</header>
+
+  <main class="contact">
+
+    <!-- Centered Heading -->
+    <h2 class="center-heading">Contact Me</h2>
+
+    <!-- Contact Form -->
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- 🟢 Thank You Message (Initially Hidden) -->
+    <div id="thankYouMessage" style="display: none; color: #4CAF50; margin-top: 1rem;">
+      Thank you for contacting me! I'll get back to you soon.
+    </div>
+    <div class="addresses">
+  <div class="address-box">
+    <img src="location.jpg" alt="Location Icon" />
+    <p>Adiss ababa, Ethiopia</p>
+  </div>
+  <div class="address-box">
+    <img src="gmail.jpg" alt="Email Icon" />
+    <a href="mailto:beimnettariu871@gmail.com">Email</a>
+  </div>
+  <div class="address-box">
+    <img src="telegram.png" alt="telegram Icon" />
+    <a href="https://t.me/Beimnettariku" target="_blank">Telegram</a>
+  </div>
+</div>
+  </main>
+
+   <footer class="site-footer">
+    <p>&copy; 2025 Beimnet Tariku. All rights reserved.</p>
+  </footer>
+  <!-- JavaScript – Show Thank You Message After Submit -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      // Prevent real form submission (for now)
+      e.preventDefault();
+
+      // Just show thank you message
+      document.getElementById("thankYouMessage").style.display = "block";
+    });
+  </script>
+   <script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>
